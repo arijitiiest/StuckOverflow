@@ -35,7 +35,7 @@ export const sessionValidator = async (
   try {
     const token = getAppCookies(req);
 
-    let tok = null;
+    let tok:any = null;
 
     if (token !== undefined) tok = token.token;
 
