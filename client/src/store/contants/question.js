@@ -1,0 +1,4 @@
+export const FETCH_QUESTIONS = "FETCH_QUESTIONS";
+export const ADD_QUESTIONS = "ADD_QUESTIONS";
+export const LOADING_TRUE = "LOADING_TRUE";
+export const LOADING_FALSE = "LOADING_FALSE";
