@@ -118,10 +118,15 @@ const Popup = (props) => {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                
               }}
             >
-              <div style={{ width: "30rem", fontWeight: "bold", paddingLeft: "10px" }}>
+              <div
+                style={{
+                  width: "30rem",
+                  fontWeight: "bold",
+                  paddingLeft: "10px",
+                }}
+              >
                 Question Desc :{"  "}
                 <span
                   style={{
@@ -141,30 +146,31 @@ const Popup = (props) => {
               </div>
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-around",
-                width: "30rem",
-                marginLeft: "9rem",
-                fontWeight: "bold",
-                marginTop: "1rem",
-              }}
-            >
-              <div>
-                Views :{" "}
-                <span style={{ fontWeight: "normal" }}>{view_count}</span>
-              </div>
-              <div>
-                Asked At :{" "}
-                <span style={{ fontWeight: "normal" }}>
-                  {new Date(creation_date).toDateString()}
-                </span>
-              </div>
-              <div>
-                Answers :{" "}
-                <span style={{ fontWeight: "normal" }}>{answer_count}</span>
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-around",
+                  width: "30rem",
+                  fontWeight: "bold",
+                  marginTop: "1rem",
+                }}
+              >
+                <div>
+                  Views :{" "}
+                  <span style={{ fontWeight: "normal" }}>{view_count}</span>
+                </div>
+                <div>
+                  Asked At :{" "}
+                  <span style={{ fontWeight: "normal" }}>
+                    {new Date(creation_date).toDateString()}
+                  </span>
+                </div>
+                <div>
+                  Answers :{" "}
+                  <span style={{ fontWeight: "normal" }}>{answer_count}</span>
+                </div>
               </div>
             </div>
 
