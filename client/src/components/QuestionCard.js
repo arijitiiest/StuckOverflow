@@ -51,32 +51,53 @@ const QuestionCard = (props) => {
               alignItems: "center",
             }}
           >
-            <a href={profileLink} onClick={(e) => e.stopPropagation()}>
+            <a
+              href={profileLink}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                borderRadius: "50%",
+                borderWidth: "2px",
+                borderColor: "black",
+                borderStyle: "solid",
+                width: "64px",
+                height: "64px",
+                marginBottom: "0.5rem",
+              }}
+            >
               <Image src={profile_image} roundedCircle width="60" />
             </a>
             <div>{display_name}</div>
           </div>
-          <div
-            dangerouslySetInnerHTML={{ __html: title }}
-            style={{
-              width: "28rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          />
+          <div>
+            <div style={{fontWeight: "bold"}}>Question Title: </div>
+            <div
+              dangerouslySetInnerHTML={{ __html: title }}
+              style={{
+                width: "30rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "5px",
+              }}
+            />
+          </div>
+
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "8rem",
+              width: "6rem",
               justifyContent: "center",
               alignItems: "center",
             }}
           >
             {isFav ? (
               <Favorite
-                style={{ color: "red", marginBottom: "2rem", cursor: "pointer" }}
+                style={{
+                  color: "red",
+                  marginBottom: "2rem",
+                  cursor: "pointer",
+                }}
                 onClick={removeFavHandler}
               />
             ) : (
@@ -98,16 +119,18 @@ const QuestionCard = (props) => {
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "center",
+            paddingTop: "1rem",
           }}
         >
           {tags.map((tag, key) => (
             <div
               key={key}
               style={{
-                padding: 10,
+                padding: "6px 15px",
                 margin: 5,
-                backgroundColor: "#aaffff",
-                borderRadius: "10px",
+                backgroundColor: "#3e7ff0",
+                color: "#ffffff",
+                borderRadius: "5px",
               }}
             >
               {tag}

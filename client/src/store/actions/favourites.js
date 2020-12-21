@@ -17,9 +17,9 @@ export const fetchFavourites = () => async (dispatch) => {
 
 export const addFavourite = (question_id) => async (dispatch) => {
   try {
-    await axois.post("/api/sessions", { question_id });
-
     dispatch({ type: ADD_FAVOURITE, payload: question_id });
+
+    await axois.post("/api/sessions", { question_id });
   } catch (err) {
     console.log(err);
   }
@@ -27,13 +27,13 @@ export const addFavourite = (question_id) => async (dispatch) => {
 
 export const removeFavourite = (question_id) => async (dispatch) => {
   try {
+    dispatch({ type: REMOVE_FAVOURITE, payload: question_id });
+
     await axois.delete("/api/sessions", {
       data: {
         question_id,
       },
     });
-
-    dispatch({ type: REMOVE_FAVOURITE, payload: question_id });
   } catch (err) {
     console.log(err);
   }
