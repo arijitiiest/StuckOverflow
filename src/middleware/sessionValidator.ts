@@ -35,7 +35,7 @@ export const sessionValidator = async (
   try {
     const token = getAppCookies(req);
 
-    let tok:any = null;
+    let tok: any = null;
 
     if (token !== undefined) tok = token.token;
 
@@ -58,7 +58,8 @@ export const sessionValidator = async (
       const id = await createToken();
 
       const token = jwt.sign({ token: id }, process.env.SECRET_KEY || "");
-      res.cookie("token", token);
+      res.cookie("token", token, { httpOnly: true });
+      // res.cookie("token", token);
       req.app.set("session_id", id);
       next();
     }
