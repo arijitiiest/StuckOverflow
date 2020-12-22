@@ -60,7 +60,7 @@ exports.sessionValidator = (req, res, next) => __awaiter(void 0, void 0, void 0,
         else {
             const id = yield createToken();
             const token = jsonwebtoken_1.default.sign({ token: id }, process.env.SECRET_KEY || "");
-            res.cookie("token", token);
+            res.cookie("token", token, { httpOnly: true });
             req.app.set("session_id", id);
             next();
         }
